@@ -12,8 +12,8 @@ window.addEventListener('scroll', () => {
 const roles = [
   'ETL Architect',
   'Data Engineer',
-  'Quant Researcher',
-  'McKinsey Collaborator',
+  'Data Analytics Engineer',
+  'Pipeline Architect',
   'Global Builder',
 ];
 
