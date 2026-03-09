@@ -1,69 +1,305 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge Barron - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorge Barron Rivero — Data Analytics Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Jorge Barron Rivero</h1>
-        <p>Data Analytics Engineer</p>
-        <p><a href="mailto:jorgebarron0510@gmail.com">jorgebarron0510@gmail.com</a> | <a href="https://linkedin.com/in/jorgebarronrivero" target="_blank">LinkedIn</a></p>
-    </header>
 
-    <main>
-        <section id="education">
-            <h2>Education</h2>
-            <p><strong>Northeastern University</strong> - Bachelor of Science in Computer Science and Economics</p>
-            <p>Khoury College of Computer Sciences, Boston, MA | GPA: 3.55</p>
-        </section>
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">JBR</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <ul>
-                <li><strong>Programming & Data Analysis:</strong> Python, SQL, R, Java, Pandas, NumPy, Snowflake, dbt, Astronomer, Airflow</li>
-                <li><strong>Databases & Web Technologies:</strong> MongoDB, HTML/CSS, XML, LaTeX, Fivetran</li>
-                <li><strong>Tools & Frameworks:</strong> Docker, Git, GitHub, Bitbucket, Swing, Ubuntu, VisualCron, AWS Lambda</li>
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-content">
+      <p class="hero-eyebrow fade-up" style="--delay: 0.1s">Data Analytics Engineer</p>
+      <h1 class="hero-name fade-up" style="--delay: 0.3s">Jorge Barron<br>Rivero</h1>
+      <p class="hero-subtitle fade-up" style="--delay: 0.5s">
+        Quantitative Finance &nbsp;·&nbsp; ETL Infrastructure &nbsp;·&nbsp; Trilingual &nbsp;·&nbsp; NYC
+      </p>
+      <p class="hero-ticker fade-up" style="--delay: 0.7s">
+        &gt;&nbsp;<span id="typewriter"></span><span class="cursor">|</span>
+      </p>
+      <div class="hero-cta fade-up" style="--delay: 0.9s">
+        <a href="#experience" class="btn btn-primary">View My Work ↓</a>
+        <a href="https://www.linkedin.com/in/jorgebarronrivero" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">About</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid reveal">
+        <div class="about-bio">
+          <p class="about-text">
+            I build the data infrastructure that drives decisions — from quantitative hedge fund strategies to real estate analytics. Originally from Latin America, I've lived across 9 countries and bring that global lens to everything I build.
+          </p>
+          <div class="language-badges">
+            <span class="badge"><span class="flag">🇺🇸</span> English</span>
+            <span class="badge"><span class="flag">🇧🇷</span> Portuguese</span>
+            <span class="badge"><span class="flag">🇪🇸</span> Spanish</span>
+          </div>
+        </div>
+        <div class="about-countries">
+          <p class="countries-label">Lived in</p>
+          <div class="country-grid">
+            <span class="country-tag">🇦🇴 Angola</span>
+            <span class="country-tag">🇦🇷 Argentina</span>
+            <span class="country-tag">🇧🇴 Bolivia</span>
+            <span class="country-tag">🇧🇷 Brazil</span>
+            <span class="country-tag">🇨🇺 Cuba</span>
+            <span class="country-tag">🏴󠁧󠁢󠁥󠁮󠁧󠁿 England</span>
+            <span class="country-tag">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</span>
+            <span class="country-tag">🇪🇸 Spain</span>
+            <span class="country-tag">🇺🇸 U.S.</span>
+          </div>
+          <div class="edu-block">
+            <p class="edu-school">Northeastern University</p>
+            <p class="edu-degree">B.S. Computer Science &amp; Economics &nbsp;·&nbsp; GPA 3.55</p>
+            <p class="edu-date">Sep 2020 – May 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Experience</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+
+        <!-- Freestone Grove -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Data Analytics Engineer</h3>
+                <p class="timeline-company">Freestone Grove Partners &nbsp;<span class="live-badge"><span class="pulse-ring"></span>Current</span></p>
+              </div>
+              <span class="timeline-date">Jul 2025 – Present</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Evaluate alternative data vendors for long/short, factor neutral quantitative strategies by building ETL pipelines and conducting backtests against historical portfolio performance.</li>
+              <li>Analyze predictive signals through correlation analysis and temporal consistency checks, presenting findings to data scientists and investment teams.</li>
+              <li>Engineer and prioritize data ingestion workflows integrating vendor feeds into the firm's data lake, maintaining scalable, production-grade engineering standards.</li>
             </ul>
-        </section>
-
-        <section id="experience">
-            <h2>Work Experience</h2>
-            <div>
-                <h3>Avenue One</h3>
-                <p><em>Data Analytics Engineer</em> | May 2024 – Present</p>
-                <ul>
-                    <li>Developed ETL pipelines, ensuring data flow for transaction and asset management.</li>
-                    <li>Optimized databases in Snowflake for enhanced accessibility across departments.</li>
-                </ul>
+            <div class="timeline-tags">
+              <span>ETL</span><span>Backtesting</span><span>Quantitative Strategies</span><span>Alternative Data</span>
             </div>
-            <div>
-                <h3>Perkins, Howe Innovation Center</h3>
-                <p><em>Research and Data Analyst</em> | June 2023 – Dec. 2023</p>
-                <ul>
-                    <li>Expanded DisabilityTech database, leading team collaboration with McKinsey.</li>
-                    <li>Designed visualizations to showcase market insights globally.</li>
-                </ul>
+          </div>
+        </div>
+
+        <!-- Avenue One -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Data Analytics Engineer</h3>
+                <p class="timeline-company">Avenue One</p>
+              </div>
+              <span class="timeline-date">May 2024 – May 2025</span>
             </div>
-        </section>
+            <ul class="timeline-bullets">
+              <li>Architected data infrastructure with S3 Data Lake, MSSQL, and Snowflake, implementing dbt transformations for real estate data from MLS systems and Zillow.</li>
+              <li>Orchestrated ETL processes using Fivetran, Airflow, and Etlworks to sync operational data from Amazon RDS into a centralized Snowflake warehouse.</li>
+              <li>Developed analytics solutions in Sigma for portfolio optimization and market analysis, integrating CI/CD with Git workflows.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Snowflake</span><span>dbt</span><span>Fivetran</span><span>Airflow</span><span>Sigma</span>
+            </div>
+          </div>
+        </div>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <p><strong>Real Estate Website Management and Advertising</strong> - Designed a website showcasing 56 apartments via targeted ads.</p>
-        </section>
+        <!-- Perkins -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Research and Data Analyst Co-op</h3>
+                <p class="timeline-company">Perkins School for the Blind</p>
+              </div>
+              <span class="timeline-date">Jun 2023 – Dec 2023</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Built interactive data visualizations in Python mapping global DisabilityTech market trends, product segmentation, and company growth trajectories for McKinsey collaboration.</li>
+              <li>Engineered Python-based data integration automating collection and scaling the DisabilityTech company database by 2×.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Python</span><span>Data Visualization</span><span>McKinsey</span>
+            </div>
+          </div>
+        </div>
 
-        <section id="languages">
-            <h2>Languages & Multicultural Experience</h2>
-            <p>Spanish (native), English (native), Portuguese (fluent)</p>
-            <p>Lived in: Angola, Argentina, Bolivia, Brazil, Cuba, England, Scotland, Spain, U.S.</p>
-        </section>
-    </main>
+        <!-- Annaly -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Project Management &amp; Application Support Co-op</h3>
+                <p class="timeline-company">Annaly Capital Management</p>
+              </div>
+              <span class="timeline-date">Jul 2022 – Dec 2022</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Resolved 400+ data integrity issues by debugging VisualCron jobs and optimizing SQL queries for mortgage-backed securities portfolio operations.</li>
+              <li>Tracked and analyzed bug trends in JIRA, presenting operational KPIs to CTO and development teams in weekly stand-ups.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>SQL</span><span>VisualCron</span><span>JIRA</span><span>MBS</span>
+            </div>
+          </div>
+        </div>
 
-    <footer>
-        <p>&copy; 2024 Jorge Barron</p>
-    </footer>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECT -->
+  <section id="project" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Featured Project</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-meta">
+          <span class="project-tag">McKinsey Collaboration</span>
+          <span class="project-tag">Published Research</span>
+        </div>
+        <h2 class="project-title">Defining DisabilityTech: The Rise of Inclusive Innovation</h2>
+        <p class="project-org">Perkins School for the Blind &nbsp;·&nbsp; June – September 2023</p>
+        <p class="project-desc">
+          Co-authored a McKinsey-featured white paper analyzing the global DisabilityTech landscape — mapping 1,500+ companies across hardware, software, and services categories.
+        </p>
+        <div class="project-stats">
+          <div class="stat">
+            <span class="stat-num">$25B</span>
+            <span class="stat-label">Current Market</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">$37B</span>
+            <span class="stat-label">Projected by 2029</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">1,500+</span>
+            <span class="stat-label">Companies Mapped</span>
+          </div>
+        </div>
+        <a href="https://www.perkins.org/defining-disabilitytech-the-rise-of-inclusive-innovation/" target="_blank" class="btn btn-primary project-link">Read the Publication ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Skills</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h4 class="skill-group-label">Programming</h4>
+          <div class="skill-pills">
+            <span>Python</span><span>SQL</span><span>R</span><span>Java</span>
+            <span>HTML/CSS</span><span>LaTeX</span><span>Lisp</span><span>Racket</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4 class="skill-group-label">Data &amp; Cloud</h4>
+          <div class="skill-pills">
+            <span>Snowflake</span><span>dbt</span><span>Dagster</span><span>Fivetran</span>
+            <span>Airflow</span><span>Spark</span><span>MongoDB</span><span>S3</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4 class="skill-group-label">Tools &amp; Platforms</h4>
+          <div class="skill-pills">
+            <span>Docker</span><span>GitHub</span><span>Jira</span><span>Sigma</span>
+            <span>NumPy</span><span>Pandas</span><span>Ubuntu</span><span>VisualCron</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4 class="skill-group-label">Languages</h4>
+          <div class="skill-pills">
+            <span>🇺🇸 English (Native)</span>
+            <span>🇪🇸 Spanish (Native)</span>
+            <span>🇧🇷 Portuguese (Fluent)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section id="leadership" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Leadership</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="leadership-grid">
+        <div class="leadership-card reveal">
+          <h3>LATAM Business Club</h3>
+          <p class="leadership-sub">Co-Founder &nbsp;·&nbsp; Northeastern University &nbsp;·&nbsp; Aug 2023 – May 2024</p>
+          <p>Co-founded and expanded club to 350+ members, hosting fireside chats with LATAM Airlines CEO and angel investors to create partnership opportunities.</p>
+        </div>
+        <div class="leadership-card reveal">
+          <h3>Teaching Assistant — CS Professional Development</h3>
+          <p class="leadership-sub">Khoury College of CS, Northeastern &nbsp;·&nbsp; Jan – Apr 2024</p>
+          <p>Mentored 100+ CS/Data Science students through co-op readiness via mock interviews, resume reviews, and technical workshops.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact">
+    <div class="container">
+      <p class="footer-tagline">"Building the infrastructure behind the insight."</p>
+      <div class="footer-links">
+        <a href="mailto:jorgebarron0510@gmail.com">jorgebarron0510@gmail.com</a>
+        <span class="footer-sep">·</span>
+        <a href="https://www.linkedin.com/in/jorgebarronrivero" target="_blank">LinkedIn</a>
+        <span class="footer-sep">·</span>
+        <a href="https://github.com/jorgebarron05" target="_blank">GitHub</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Jorge Barron Rivero</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
