@@ -7,16 +7,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ─── NAV ─────────────────────────────────── -->
   <nav id="navbar">
     <div class="nav-inner">
       <span class="nav-logo">JBR</span>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#journey">Journey</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#project">Project</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -25,26 +27,30 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- ─── HERO ─────────────────────────────────── -->
   <section id="hero">
     <canvas id="particle-canvas"></canvas>
+    <div class="hero-bg-globe" aria-hidden="true"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow fade-up" style="--delay: 0.1s">Data Analytics Engineer</p>
-      <h1 class="hero-name fade-up" style="--delay: 0.3s">Jorge Barron<br>Rivero</h1>
-      <p class="hero-subtitle fade-up" style="--delay: 0.5s">
-        Quantitative Finance &nbsp;·&nbsp; ETL Infrastructure &nbsp;·&nbsp; Trilingual &nbsp;·&nbsp; NYC
+      <p class="hero-eyebrow fade-up" style="--delay:0.1s">Data Analytics Engineer · NYC</p>
+      <h1 class="hero-name fade-up" style="--delay:0.3s">Jorge Barron<br>Rivero</h1>
+      <p class="hero-subtitle fade-up" style="--delay:0.5s">
+        Quantitative Finance &nbsp;·&nbsp; ETL Infrastructure &nbsp;·&nbsp; Trilingual
       </p>
-      <p class="hero-ticker fade-up" style="--delay: 0.7s">
+      <p class="hero-ticker fade-up" style="--delay:0.7s">
         &gt;&nbsp;<span id="typewriter"></span><span class="cursor">|</span>
       </p>
-      <div class="hero-cta fade-up" style="--delay: 0.9s">
+      <div class="hero-coords fade-up" style="--delay:0.85s">
+        <span>40.7128° N</span><span class="coord-sep">·</span><span>74.0060° W</span>
+      </div>
+      <div class="hero-cta fade-up" style="--delay:1s">
         <a href="#experience" class="btn btn-primary">View My Work ↓</a>
         <a href="https://www.linkedin.com/in/jorgebarronrivero" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ─── ABOUT ────────────────────────────────── -->
   <section id="about" class="section">
     <div class="container">
       <div class="section-header reveal">
@@ -56,14 +62,30 @@
           <p class="about-text">
             I build the data infrastructure that drives decisions — from quantitative hedge fund strategies to real estate analytics. Originally from Latin America, I've lived across 9 countries and bring that global lens to everything I build.
           </p>
+          <div class="credential-strip">
+            <div class="credential">
+              <span class="credential-icon">🎓</span>
+              <div>
+                <p class="credential-title">IB Diploma</p>
+                <p class="credential-sub">American School of Madrid · 2020</p>
+              </div>
+            </div>
+            <div class="credential">
+              <span class="credential-icon">🏛️</span>
+              <div>
+                <p class="credential-title">B.S. Computer Science &amp; Economics</p>
+                <p class="credential-sub">Northeastern University · GPA 3.55 · 2024</p>
+              </div>
+            </div>
+          </div>
           <div class="language-badges">
-            <span class="badge"><span class="flag">🇺🇸</span> English</span>
-            <span class="badge"><span class="flag">🇧🇷</span> Portuguese</span>
-            <span class="badge"><span class="flag">🇪🇸</span> Spanish</span>
+            <span class="badge">🇺🇸 English</span>
+            <span class="badge">🇧🇷 Portuguese</span>
+            <span class="badge">🇪🇸 Spanish</span>
           </div>
         </div>
         <div class="about-countries">
-          <p class="countries-label">Lived in</p>
+          <p class="countries-label">9 Countries · 3 Continents</p>
           <div class="country-grid">
             <span class="country-tag">🇦🇴 Angola</span>
             <span class="country-tag">🇦🇷 Argentina</span>
@@ -75,17 +97,38 @@
             <span class="country-tag">🇪🇸 Spain</span>
             <span class="country-tag">🇺🇸 U.S.</span>
           </div>
-          <div class="edu-block">
-            <p class="edu-school">Northeastern University</p>
-            <p class="edu-degree">B.S. Computer Science &amp; Economics &nbsp;·&nbsp; GPA 3.55</p>
-            <p class="edu-date">Sep 2020 – May 2024</p>
+          <div class="about-quote">
+            <p>"Every country taught me a different way to see the same data."</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- ─── GLOBAL JOURNEY MAP ───────────────────── -->
+  <section id="journey" class="section section-map">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Global Journey</span>
+        <div class="section-line"></div>
+      </div>
+      <p class="journey-intro reveal">
+        9 countries &nbsp;·&nbsp; 7 schools &nbsp;·&nbsp; 3 continents &nbsp;·&nbsp; 1 career built on all of it.
+        <br>Click any marker to explore.
+      </p>
+    </div>
+    <div class="map-wrapper reveal">
+      <div id="global-map"></div>
+      <div class="map-legend">
+        <span class="legend-item school">🏫 School</span>
+        <span class="legend-item university">🎓 University</span>
+        <span class="legend-item work">💼 Work</span>
+        <span class="legend-item lived">■ Countries lived</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EXPERIENCE ───────────────────────────── -->
   <section id="experience" class="section">
     <div class="container">
       <div class="section-header reveal">
@@ -94,14 +137,15 @@
       </div>
       <div class="timeline">
 
-        <!-- Freestone Grove -->
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <div class="timeline-header">
               <div>
                 <h3 class="timeline-role">Data Analytics Engineer</h3>
-                <p class="timeline-company">Freestone Grove Partners &nbsp;<span class="live-badge"><span class="pulse-ring"></span>Current</span></p>
+                <p class="timeline-company">
+                  Freestone Grove Partners &nbsp;<span class="live-badge"><span class="pulse-ring"></span>Current</span>
+                </p>
               </div>
               <span class="timeline-date">Jul 2025 – Present</span>
             </div>
@@ -116,7 +160,6 @@
           </div>
         </div>
 
-        <!-- Avenue One -->
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
@@ -130,7 +173,7 @@
             <ul class="timeline-bullets">
               <li>Architected data infrastructure with S3 Data Lake, MSSQL, and Snowflake, implementing dbt transformations for real estate data from MLS systems and Zillow.</li>
               <li>Orchestrated ETL processes using Fivetran, Airflow, and Etlworks to sync operational data from Amazon RDS into a centralized Snowflake warehouse.</li>
-              <li>Developed analytics solutions in Sigma for portfolio optimization and market analysis, integrating CI/CD with Git workflows.</li>
+              <li>Developed Sigma analytics dashboards for portfolio optimization and market analysis, integrating CI/CD with Git workflows.</li>
             </ul>
             <div class="timeline-tags">
               <span>Snowflake</span><span>dbt</span><span>Fivetran</span><span>Airflow</span><span>Sigma</span>
@@ -138,28 +181,26 @@
           </div>
         </div>
 
-        <!-- Perkins -->
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <div class="timeline-header">
               <div>
-                <h3 class="timeline-role">Research and Data Analyst Co-op</h3>
+                <h3 class="timeline-role">Research &amp; Data Analyst Co-op</h3>
                 <p class="timeline-company">Perkins School for the Blind</p>
               </div>
               <span class="timeline-date">Jun 2023 – Dec 2023</span>
             </div>
             <ul class="timeline-bullets">
-              <li>Built interactive data visualizations in Python mapping global DisabilityTech market trends, product segmentation, and company growth trajectories for McKinsey collaboration.</li>
-              <li>Engineered Python-based data integration automating collection and scaling the DisabilityTech company database by 2×.</li>
+              <li>Built interactive data visualizations in Python mapping global DisabilityTech market trends across 1,500+ companies in partnership with McKinsey.</li>
+              <li>Engineered Python-based data pipelines, scaling the DisabilityTech company database by 2×.</li>
             </ul>
             <div class="timeline-tags">
-              <span>Python</span><span>Data Visualization</span><span>McKinsey</span>
+              <span>Python</span><span>Data Visualization</span><span>McKinsey Collaboration</span>
             </div>
           </div>
         </div>
 
-        <!-- Annaly -->
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
@@ -172,7 +213,7 @@
             </div>
             <ul class="timeline-bullets">
               <li>Resolved 400+ data integrity issues by debugging VisualCron jobs and optimizing SQL queries for mortgage-backed securities portfolio operations.</li>
-              <li>Tracked and analyzed bug trends in JIRA, presenting operational KPIs to CTO and development teams in weekly stand-ups.</li>
+              <li>Tracked bug trends in JIRA and presented operational KPIs to CTO and development teams in weekly stand-ups.</li>
             </ul>
             <div class="timeline-tags">
               <span>SQL</span><span>VisualCron</span><span>JIRA</span><span>MBS</span>
@@ -184,7 +225,23 @@
     </div>
   </section>
 
-  <!-- FEATURED PROJECT -->
+  <!-- ─── NYC MAP ──────────────────────────────── -->
+  <section id="nyc" class="section section-map">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">New York City</span>
+        <div class="section-line"></div>
+      </div>
+      <p class="journey-intro reveal">
+        Where finance, real estate, and data converge. Click a marker for details.
+      </p>
+    </div>
+    <div class="map-wrapper reveal">
+      <div id="nyc-map"></div>
+    </div>
+  </section>
+
+  <!-- ─── FEATURED PROJECT ─────────────────────── -->
   <section id="project" class="section">
     <div class="container">
       <div class="section-header reveal">
@@ -196,10 +253,10 @@
           <span class="project-tag">McKinsey Collaboration</span>
           <span class="project-tag">Published Research</span>
         </div>
-        <h2 class="project-title">Defining DisabilityTech: The Rise of Inclusive Innovation</h2>
+        <h2 class="project-title">Defining DisabilityTech:<br>The Rise of Inclusive Innovation</h2>
         <p class="project-org">Perkins School for the Blind &nbsp;·&nbsp; June – September 2023</p>
         <p class="project-desc">
-          Co-authored a McKinsey-featured white paper analyzing the global DisabilityTech landscape — mapping 1,500+ companies across hardware, software, and services categories.
+          Co-authored a McKinsey-featured white paper analyzing the global DisabilityTech landscape — mapping 1,500+ companies across hardware, software, and services categories to quantify a fast-growing market.
         </p>
         <div class="project-stats">
           <div class="stat">
@@ -216,13 +273,18 @@
             <span class="stat-num">1,500+</span>
             <span class="stat-label">Companies Mapped</span>
           </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">2×</span>
+            <span class="stat-label">Database Growth</span>
+          </div>
         </div>
         <a href="https://www.perkins.org/defining-disabilitytech-the-rise-of-inclusive-innovation/" target="_blank" class="btn btn-primary project-link">Read the Publication ↗</a>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- ─── SKILLS ───────────────────────────────── -->
   <section id="skills" class="section">
     <div class="container">
       <div class="section-header reveal">
@@ -234,7 +296,7 @@
           <h4 class="skill-group-label">Programming</h4>
           <div class="skill-pills">
             <span>Python</span><span>SQL</span><span>R</span><span>Java</span>
-            <span>HTML/CSS</span><span>LaTeX</span><span>Lisp</span><span>Racket</span>
+            <span>HTML/CSS</span><span>LaTeX</span>
           </div>
         </div>
         <div class="skill-group reveal">
@@ -263,7 +325,7 @@
     </div>
   </section>
 
-  <!-- LEADERSHIP -->
+  <!-- ─── LEADERSHIP ───────────────────────────── -->
   <section id="leadership" class="section">
     <div class="container">
       <div class="section-header reveal">
@@ -273,19 +335,19 @@
       <div class="leadership-grid">
         <div class="leadership-card reveal">
           <h3>LATAM Business Club</h3>
-          <p class="leadership-sub">Co-Founder &nbsp;·&nbsp; Northeastern University &nbsp;·&nbsp; Aug 2023 – May 2024</p>
-          <p>Co-founded and expanded club to 350+ members, hosting fireside chats with LATAM Airlines CEO and angel investors to create partnership opportunities.</p>
+          <p class="leadership-sub">Co-Founder · Northeastern University · Aug 2023 – May 2024</p>
+          <p>Co-founded and grew to 350+ members, hosting fireside chats with the LATAM Airlines CEO and angel investors to create partnership opportunities for LATAM-connected students.</p>
         </div>
         <div class="leadership-card reveal">
           <h3>Teaching Assistant — CS Professional Development</h3>
-          <p class="leadership-sub">Khoury College of CS, Northeastern &nbsp;·&nbsp; Jan – Apr 2024</p>
-          <p>Mentored 100+ CS/Data Science students through co-op readiness via mock interviews, resume reviews, and technical workshops.</p>
+          <p class="leadership-sub">Khoury College of CS, Northeastern · Jan – Apr 2024</p>
+          <p>Mentored 100+ CS and Data Science students through co-op readiness via mock interviews, resume reviews, and technical career workshops.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT / FOOTER -->
+  <!-- ─── CONTACT / FOOTER ─────────────────────── -->
   <footer id="contact">
     <div class="container">
       <p class="footer-tagline">"Building the infrastructure behind the insight."</p>
@@ -300,6 +362,8 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson@3/dist/topojson.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
