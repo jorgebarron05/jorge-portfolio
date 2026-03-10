@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flood It — Jorge Barron</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="back-nav">
+    <a href="../../index.html" class="back-link">← Back to Portfolio</a>
+  </nav>
+
+  <main>
+
+    <header class="game-header">
+      <h1 class="game-title">Flood It</h1>
+      <p class="game-subtitle">Flood the board with a single colour before you run out of moves.</p>
+    </header>
+
+    <div class="hud">
+      <div class="hud-item">
+        <span class="hud-label">Steps</span>
+        <span class="hud-value" id="steps-val">0 / —</span>
+      </div>
+      <div class="hud-item">
+        <span class="hud-label">Time</span>
+        <span class="hud-value" id="elapsed-val">0s</span>
+      </div>
+    </div>
+
+    <div class="canvas-wrap">
+      <canvas id="game-canvas"></canvas>
+    </div>
+
+    <div id="color-buttons"></div>
+
+    <div class="controls">
+      Click a colour to flood · <span>R</span> reset · <span>D</span> dark theme · <span>L</span> light theme
+    </div>
+
+    <p class="credit">Originally built in Java · CS2510, Northeastern University<br>Jorge Barron &amp; Tri Watanasuparp</p>
+
+  </main>
+
+  <!-- game.js must load before ui.js (ui depends on game globals) -->
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
