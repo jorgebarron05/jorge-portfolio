@@ -1,0 +1,109 @@
+/* ============================================
+   MAPS — Journey map · NYC map · Leaflet overrides · Markers
+   ============================================ */
+
+/* ─── MAP LAYOUT ─────────────────────────────── */
+.journey-intro {
+  font-size: 1rem; color: var(--white-dim); font-weight: 300;
+  margin-top: -1rem; margin-bottom: 0; line-height: 1.8;
+}
+
+.map-wrapper {
+  width: 100%; margin-top: 2.5rem;
+  position: relative;
+  border-top: 1px solid rgba(203, 223, 144, 0.1);
+  border-bottom: 1px solid rgba(203, 223, 144, 0.1);
+}
+
+#global-map { height: 520px; width: 100%; }
+#nyc-map    { height: 460px; width: 100%; }
+
+.map-legend {
+  position: absolute; bottom: 1rem; left: 1rem;
+  z-index: 500;
+  display: flex; gap: 0.75rem; flex-wrap: wrap;
+  background: rgba(9, 22, 40, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(203, 223, 144, 0.2);
+  border-radius: 6px; padding: 0.5rem 0.85rem;
+}
+
+.legend-item {
+  font-family: var(--font-mono); font-size: 0.65rem;
+  color: var(--white-dim); letter-spacing: 0.05em;
+}
+
+.legend-item.lived { color: var(--green); }
+
+/* ─── LEAFLET POPUP OVERRIDES ────────────────── */
+.leaflet-popup-content-wrapper {
+  background: #0f2545 !important;
+  border: 1px solid rgba(203, 223, 144, 0.35) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.55) !important;
+  padding: 0 !important;
+  color: var(--white) !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  font-family: var(--font-body) !important;
+}
+
+.leaflet-popup-tip { background: #0f2545 !important; }
+
+.leaflet-popup-close-button {
+  color: var(--lime) !important;
+  font-size: 18px !important;
+  top: 6px !important; right: 8px !important;
+}
+
+/* ─── POPUP CONTENT ──────────────────────────── */
+.map-popup { padding: 1rem 1.1rem; min-width: 185px; }
+
+.map-popup h3 {
+  font-family: var(--font-mono); font-size: 0.82rem;
+  color: var(--lime); margin-bottom: 0.3rem; line-height: 1.4;
+}
+
+.popup-location { font-size: 0.76rem; color: var(--white-dim); margin-bottom: 0.2rem; }
+.popup-years    { font-family: var(--font-mono); font-size: 0.7rem; color: var(--green); }
+.popup-role     { font-size: 0.76rem; color: var(--sage); margin-top: 0.3rem; }
+.popup-note     { font-size: 0.68rem; color: var(--white-faint); margin-top: 0.2rem; }
+
+.popup-achievement {
+  font-size: 0.75rem; color: var(--lime); margin-top: 0.45rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid rgba(203, 223, 144, 0.2);
+}
+
+/* ─── CUSTOM MARKERS ─────────────────────────── */
+.map-marker {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; border: 2px solid;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+  cursor: pointer; position: relative;
+  transition: transform 0.2s ease;
+}
+
+.map-marker:hover { transform: scale(1.18); }
+
+.map-marker.school     { background: #8FAD88; border-color: #CBDF90; }
+.map-marker.university { background: #CBDF90; border-color: #8FAD88; color: #0c1f3d; }
+.map-marker.work       { background: #4D7C8A; border-color: #7F9C96; }
+.map-marker.home       { background: #1B4079; border-color: #CBDF90; }
+.map-marker.current    { border-color: #4ade80; box-shadow: 0 0 14px rgba(74,222,128,0.45); }
+
+.marker-pulse {
+  position: absolute; top: -4px; right: -4px;
+  width: 11px; height: 11px; border-radius: 50%;
+  background: #4ade80;
+  animation: pulse 2s ease-out infinite;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 768px) {
+  #global-map { height: 380px; }
+  #nyc-map    { height: 340px; }
+}
