@@ -2,6 +2,62 @@
    SECTIONS — About · Experience · Project · Skills · Leadership · Footer
    ============================================ */
 
+/* ─── SIDE PROJECTS ──────────────────────────── */
+.side-projects { margin-top: 2.5rem; }
+
+.side-projects-label {
+  font-family: var(--font-mono); font-size: 0.68rem;
+  color: var(--white-faint); letter-spacing: 0.2em;
+  text-transform: uppercase; margin-bottom: 1.25rem;
+}
+
+.side-projects-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+}
+
+.side-card {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  transition: border-color var(--ease), box-shadow var(--ease), transform var(--ease);
+  color: var(--white); text-decoration: none;
+}
+
+.side-card:hover {
+  border-color: rgba(203,223,144,0.35);
+  box-shadow: 0 0 28px rgba(143,173,136,0.1);
+  transform: translateY(-2px);
+  color: var(--white);
+}
+
+.side-card-icon { font-size: 1.75rem; flex-shrink: 0; line-height: 1; padding-top: 0.1rem; }
+
+.side-card-title {
+  font-family: var(--font-mono); font-size: 0.92rem;
+  color: var(--lime); font-weight: 700; margin-bottom: 0.4rem;
+}
+
+.side-card-sub {
+  font-size: 0.82rem; color: var(--white-dim); line-height: 1.6; margin-bottom: 0.75rem;
+}
+
+.side-card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+.side-card-tags span {
+  font-family: var(--font-mono); font-size: 0.6rem;
+  padding: 0.15rem 0.5rem; border-radius: 3px;
+  background: rgba(77,124,138,0.12);
+  color: var(--sage); letter-spacing: 0.04em;
+  border: 1px solid rgba(127,156,150,0.2);
+}
+
+@media (max-width: 600px) {
+  .side-projects-grid { grid-template-columns: 1fr; }
+}
+
 /* ─── ABOUT ──────────────────────────────────── */
 .about-grid {
   display: grid; grid-template-columns: 1fr 1fr;
