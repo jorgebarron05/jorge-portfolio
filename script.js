@@ -132,7 +132,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 /* ─── MAP HELPERS ────────────────────────────── */
 function markerIcon(type, current = false) {
-  const glyphs = { school: '🏫', university: '🎓', work: '💼' };
+  const glyphs = { school: '🏫', university: '🎓', work: '💼', home: '🏠' };
   return L.divIcon({
     className: '',
     html: `<div class="map-marker ${type}${current ? ' current' : ''}">
@@ -175,10 +175,11 @@ const globalLocations = [
   },
   {
     lat: -17.7834, lng: -63.1821,
-    name: 'Santa Cruz Cooperative School',
+    name: 'Santa Cruz, Bolivia',
     location: '🇧🇴 Santa Cruz, Bolivia',
-    years: '2008 – 2009',
-    type: 'school',
+    years: 'Hometown',
+    type: 'home',
+    achievement: '🏠 Where I am from',
   },
   {
     lat: -34.6037, lng: -58.3816,
