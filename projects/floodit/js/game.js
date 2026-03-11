@@ -4,9 +4,9 @@
    Step limit: (boardSize/2) * (numColors/2) + numColors
    ============================================ */
 
-const BOARD_SIZE = 14;
-const NUM_COLORS = 6;
-const STEP_LIMIT = Math.floor(BOARD_SIZE / 2) * Math.floor(NUM_COLORS / 2) + NUM_COLORS;
+let BOARD_SIZE = 14;
+let NUM_COLORS = 6;
+let STEP_LIMIT = Math.floor(BOARD_SIZE / 2) * Math.floor(NUM_COLORS / 2) + NUM_COLORS;
 
 const PALETTES = {
   light: ['#CBDF90', '#4D7C8A', '#8FAD88', '#D4845A', '#A07CBA', '#D4A835'],
@@ -99,6 +99,7 @@ function floodFill(newColor) {
 
 /* ─── Reset ─────────────────────────────────── */
 function resetGame() {
+  STEP_LIMIT = Math.floor(BOARD_SIZE / 2) * Math.floor(NUM_COLORS / 2) + NUM_COLORS;
   clearInterval(timerHandle);
   steps     = 0;
   elapsed   = 0;

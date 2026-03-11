@@ -22,6 +22,17 @@
       <p class="game-subtitle">Navigate from <strong style="color:#8FAD88">S</strong> to <strong style="color:#D4A835">E</strong>. Use arrow keys or let BFS / DFS solve it.</p>
     </header>
 
+    <div class="settings-panel">
+      <div class="setting-row">
+        <label class="setting-label" for="maze-w-input">Width <span id="maze-w-display">25</span></label>
+        <input type="range" id="maze-w-input" min="10" max="40" value="25" step="5">
+      </div>
+      <div class="setting-row">
+        <label class="setting-label" for="maze-h-input">Height <span id="maze-h-display">18</span></label>
+        <input type="range" id="maze-h-input" min="8" max="30" value="18" step="2">
+      </div>
+    </div>
+
     <div class="hud">
       <div class="hud-item">
         <span class="hud-label">Steps</span>

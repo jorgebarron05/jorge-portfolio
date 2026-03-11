@@ -8,8 +8,8 @@
      - BFS (breadth-first) and DFS (depth-first) solvers
    ============================================ */
 
-const MAZE_W = 25;   // columns
-const MAZE_H = 18;   // rows
+let MAZE_W = 25;   // columns
+let MAZE_H = 18;   // rows
 
 let grid      = [];  // grid[row][col] → Vertex
 let player    = null;

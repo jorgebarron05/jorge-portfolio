@@ -110,6 +110,22 @@ function loop() {
   requestAnimationFrame(loop);
 }
 
+/* ─── Settings sliders ──────────────────────── */
+document.getElementById('board-size-input')?.addEventListener('input', function () {
+  BOARD_SIZE = parseInt(this.value, 10);
+  document.getElementById('board-size-display').textContent = BOARD_SIZE;
+  resize();
+  resetGame();
+  buildColorButtons();
+});
+
+document.getElementById('colors-input')?.addEventListener('input', function () {
+  NUM_COLORS = parseInt(this.value, 10);
+  document.getElementById('colors-display').textContent = NUM_COLORS;
+  resetGame();
+  buildColorButtons();
+});
+
 /* ─── Init ──────────────────────────────────── */
 (function init() {
   resize();

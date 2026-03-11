@@ -155,6 +155,21 @@ function loop() {
   requestAnimationFrame(loop);
 }
 
+/* ─── Settings sliders ──────────────────────── */
+document.getElementById('maze-w-input')?.addEventListener('input', function () {
+  MAZE_W = parseInt(this.value, 10);
+  document.getElementById('maze-w-display').textContent = MAZE_W;
+  resize();
+  resetMaze();
+});
+
+document.getElementById('maze-h-input')?.addEventListener('input', function () {
+  MAZE_H = parseInt(this.value, 10);
+  document.getElementById('maze-h-display').textContent = MAZE_H;
+  resize();
+  resetMaze();
+});
+
 /* ─── Init ──────────────────────────────────── */
 (function init() {
   resize();

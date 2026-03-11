@@ -22,6 +22,17 @@
       <p class="game-subtitle">Flood the board with a single colour before you run out of moves.</p>
     </header>
 
+    <div class="settings-panel">
+      <div class="setting-row">
+        <label class="setting-label" for="board-size-input">Board <span id="board-size-display">14</span></label>
+        <input type="range" id="board-size-input" min="8" max="20" value="14" step="2">
+      </div>
+      <div class="setting-row">
+        <label class="setting-label" for="colors-input">Colors <span id="colors-display">6</span></label>
+        <input type="range" id="colors-input" min="4" max="8" value="6" step="1">
+      </div>
+    </div>
+
     <div class="hud">
       <div class="hud-item">
         <span class="hud-label">Steps</span>
