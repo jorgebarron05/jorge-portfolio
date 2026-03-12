@@ -102,6 +102,7 @@ function render() {
   // ── HUD ─────────────────────────────────────
   document.getElementById('step-val').textContent  = stepCount;
   document.getElementById('size-val').textContent  = `${MAZE_W}×${MAZE_H}`;
+  updateBest();
 
   // ── Win overlay ──────────────────────────────
   if (gameWon) drawWinOverlay();
@@ -137,17 +138,57 @@ document.addEventListener('keydown', e => {
       break;
     case 'b': case 'B':
       solvePath = solve(false); // BFS
+      showSolverStat('bfs', solvePath);
       break;
     case 'd': case 'D':
       solvePath = solve(true);  // DFS
+      showSolverStat('dfs', solvePath);
       break;
   }
 });
 
+/* ─── Personal best ─────────────────────────── */
+function getBestKey() { return `maze-best-${MAZE_W}-${MAZE_H}`; }
+
+function updateBest() {
+  const stored = localStorage.getItem(getBestKey());
+  const best = stored ? parseInt(stored, 10) : null;
+  if (gameWon) {
+    if (best === null || stepCount < best) {
+      localStorage.setItem(getBestKey(), stepCount);
+      document.getElementById('best-val').textContent = stepCount + ' ✦';
+    } else {
+      document.getElementById('best-val').textContent = best;
+    }
+  } else {
+    document.getElementById('best-val').textContent = best !== null ? best : '—';
+  }
+}
+
+/* ─── Solver stats ───────────────────────────── */
+function showSolverStat(type, path) {
+  const el = document.getElementById(type === 'bfs' ? 'bfs-len' : 'dfs-len');
+  const stats = document.getElementById('solver-stats');
+  if (el) el.textContent = path.length > 0 ? `${path.length} steps` : 'no path';
+  if (stats) stats.style.display = 'flex';
+}
+
 // On-screen buttons for mobile
-document.getElementById('btn-bfs')?.addEventListener('click', () => { solvePath = solve(false); });
-document.getElementById('btn-dfs')?.addEventListener('click', () => { solvePath = solve(true);  });
-document.getElementById('btn-reset')?.addEventListener('click', resetMaze);
+document.getElementById('btn-bfs')?.addEventListener('click', () => {
+  solvePath = solve(false);
+  showSolverStat('bfs', solvePath);
+});
+document.getElementById('btn-dfs')?.addEventListener('click', () => {
+  solvePath = solve(true);
+  showSolverStat('dfs', solvePath);
+});
+document.getElementById('btn-reset')?.addEventListener('click', () => {
+  resetMaze();
+  const stats = document.getElementById('solver-stats');
+  if (stats) stats.style.display = 'none';
+  document.getElementById('bfs-len').textContent = '—';
+  document.getElementById('dfs-len').textContent = '—';
+});
 
 /* ─── Loop ──────────────────────────────────── */
 function loop() {

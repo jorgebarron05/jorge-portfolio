@@ -197,8 +197,39 @@ input[type="range"]::-moz-range-thumb {
   box-shadow: 0 0 6px rgba(203,223,144,0.5);
 }
 
-/* ─── CREDIT ─────────────────────────────────── */
-.credit {
-  font-size: 0.72rem; color: var(--white-faint);
-  text-align: center; letter-spacing: 0.04em;
+/* ─── SOLVER STATS ───────────────────────────── */
+.solver-stats {
+  width: 100%;
+  display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;
+  background: var(--card-bg);
+  border: 1px solid rgba(77,124,138,0.3);
+  border-radius: 6px; padding: 0.75rem 1.5rem;
 }
+
+/* ─── BUILD INFO ─────────────────────────────── */
+.build-info {
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px; padding: 1.25rem 1.5rem;
+}
+
+.build-info-title {
+  font-family: var(--font-mono); font-size: 0.65rem;
+  color: var(--lime); letter-spacing: 0.2em;
+  text-transform: uppercase; margin-bottom: 0.85rem;
+}
+
+.build-info-grid { display: flex; flex-direction: column; gap: 0.45rem; }
+
+.build-row {
+  display: flex; gap: 1rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 0.7rem;
+}
+
+.build-key {
+  color: var(--white-faint); letter-spacing: 0.06em;
+  flex-shrink: 0; min-width: 90px;
+}
+
+.build-val { color: var(--white-dim); }

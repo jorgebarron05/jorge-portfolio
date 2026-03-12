@@ -39,6 +39,10 @@
         <span class="hud-value" id="step-val">0</span>
       </div>
       <div class="hud-item">
+        <span class="hud-label">Best</span>
+        <span class="hud-value" id="best-val">—</span>
+      </div>
+      <div class="hud-item">
         <span class="hud-label">Size</span>
         <span class="hud-value" id="size-val">25×18</span>
       </div>
@@ -81,7 +85,23 @@
       <span>↑↓←→</span> move · <span>B</span> BFS · <span>D</span> DFS · <span>R</span> new maze
     </div>
 
-    <p class="credit">Originally built in Java · CS2510, Northeastern University<br>Jorge Barron &amp; Tri Watanasuparp</p>
+    <div class="solver-stats" id="solver-stats" style="display:none">
+      <div class="build-row"><span class="build-key">BFS path</span><span class="build-val" id="bfs-len">—</span></div>
+      <div class="build-row"><span class="build-key">DFS path</span><span class="build-val" id="dfs-len">—</span></div>
+    </div>
+
+    <div class="build-info">
+      <p class="build-info-title">About this project</p>
+      <div class="build-info-grid">
+        <div class="build-row"><span class="build-key">Origin</span><span class="build-val">Java · CS2510, Northeastern University</span></div>
+        <div class="build-row"><span class="build-key">Ported to</span><span class="build-val">Vanilla JS + Canvas API</span></div>
+        <div class="build-row"><span class="build-key">Generation</span><span class="build-val">Kruskal's MST + Union-Find</span></div>
+        <div class="build-row"><span class="build-key">Solvers</span><span class="build-val">BFS (shortest path) · DFS (deep-first)</span></div>
+        <div class="build-row"><span class="build-key">Java source</span><span class="build-val">1,761 lines across 4 files</span></div>
+        <div class="build-row"><span class="build-key">JS port</span><span class="build-val">349 lines across 2 files</span></div>
+        <div class="build-row"><span class="build-key">Authors</span><span class="build-val">Jorge Barron · Tri Watanasuparp</span></div>
+      </div>
+    </div>
 
   </main>
 

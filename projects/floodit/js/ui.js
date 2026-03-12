@@ -71,9 +71,27 @@ function drawEndOverlay() {
   ctx.fillText('Press R to play again', canvas.width / 2, canvas.height / 2 + CELL_PX * 0.6);
 }
 
+function getBestKey() { return `floodit-best-${BOARD_SIZE}-${NUM_COLORS}`; }
+
+function updateBest() {
+  const stored = localStorage.getItem(getBestKey());
+  const best = stored ? parseInt(stored, 10) : null;
+  if (gameState === 'win') {
+    if (best === null || steps < best) {
+      localStorage.setItem(getBestKey(), steps);
+      document.getElementById('best-val').textContent = steps + ' ✦';
+    } else {
+      document.getElementById('best-val').textContent = best;
+    }
+  } else {
+    document.getElementById('best-val').textContent = best !== null ? best : '—';
+  }
+}
+
 function updateHUD() {
   document.getElementById('steps-val').textContent   = `${steps} / ${STEP_LIMIT}`;
   document.getElementById('elapsed-val').textContent = `${elapsed}s`;
+  updateBest();
   // Keep active button in sync with curColor
   document.querySelectorAll('.color-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.color === curColor);
