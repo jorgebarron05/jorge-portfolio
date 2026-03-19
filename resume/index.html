@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume — Jorge Barron Rivero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/sections.css">
+  <style>
+    /* ─── RESUME PAGE ─────────────────────────── */
+    .resume-hero {
+      padding: 8rem 0 4rem;
+      background: linear-gradient(145deg, var(--navy-deeper) 0%, var(--navy-dark) 60%, var(--navy) 100%);
+      border-bottom: 1px solid rgba(203,223,144,0.08);
+    }
+
+    .resume-hero-inner {
+      max-width: 1080px; margin: 0 auto; padding: 0 2rem;
+      display: flex; justify-content: space-between; align-items: flex-end;
+      flex-wrap: wrap; gap: 2rem;
+    }
+
+    .resume-hero-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem; color: var(--lime);
+      letter-spacing: 0.28em; text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .resume-hero-name {
+      font-family: var(--font-mono);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700; line-height: 1.1;
+      color: var(--white); margin-bottom: 0.5rem;
+    }
+
+    .resume-hero-title {
+      font-size: 1rem; color: var(--white-dim); font-weight: 300;
+    }
+
+    .resume-hero-contact {
+      font-family: var(--font-mono);
+      font-size: 0.72rem; color: var(--sage);
+      letter-spacing: 0.06em; margin-top: 1rem;
+      display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+    }
+
+    .resume-hero-contact a { color: var(--sage); }
+    .resume-hero-contact a:hover { color: var(--lime); }
+
+    .resume-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+
+    /* ─── RESUME BODY ─────────────────────────── */
+    .resume-body { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
+
+    .resume-section { padding: 4rem 0 0; }
+
+    .resume-section-header {
+      display: flex; align-items: center; gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .resume-section-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--lime);
+      white-space: nowrap;
+    }
+
+    .resume-section-line {
+      height: 1px;
+      background: linear-gradient(to right, var(--green), var(--teal), transparent);
+      flex: 1;
+    }
+
+    /* Experience entries */
+    .resume-entry { margin-bottom: 2.25rem; }
+
+    .resume-entry-header {
+      display: flex; justify-content: space-between; align-items: baseline;
+      flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.35rem;
+    }
+
+    .resume-entry-role {
+      font-family: var(--font-mono);
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--white);
+    }
+
+    .resume-entry-date {
+      font-family: var(--font-mono);
+      font-size: 0.68rem; color: var(--sage);
+      letter-spacing: 0.06em; white-space: nowrap;
+    }
+
+    .resume-entry-company {
+      font-size: 0.85rem; color: var(--lime);
+      margin-bottom: 0.85rem;
+    }
+
+    .resume-entry-bullets {
+      list-style: none; padding: 0;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+
+    .resume-entry-bullets li {
+      font-size: 0.88rem; color: var(--white-dim);
+      line-height: 1.75; padding-left: 1.1rem; position: relative;
+    }
+
+    .resume-entry-bullets li::before {
+      content: '▸';
+      position: absolute; left: 0;
+      color: var(--teal); font-size: 0.7rem;
+      top: 0.25rem;
+    }
+
+    /* Skills */
+    .resume-skills-list {
+      display: flex; flex-direction: column; gap: 0.85rem;
+    }
+
+    .resume-skill-row {
+      display: grid; grid-template-columns: 160px 1fr; gap: 1rem;
+      align-items: baseline;
+    }
+
+    .resume-skill-category {
+      font-family: var(--font-mono);
+      font-size: 0.72rem; color: var(--sage);
+      letter-spacing: 0.08em; text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .resume-skill-items {
+      font-size: 0.85rem; color: var(--white-dim); line-height: 1.6;
+    }
+
+    /* Education */
+    .resume-edu-entry { margin-bottom: 1.5rem; }
+
+    .resume-edu-header {
+      display: flex; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.5rem;
+    }
+
+    .resume-edu-school {
+      font-family: var(--font-mono);
+      font-size: 0.95rem; font-weight: 700; color: var(--white);
+    }
+
+    .resume-edu-date {
+      font-family: var(--font-mono);
+      font-size: 0.68rem; color: var(--sage); white-space: nowrap;
+    }
+
+    .resume-edu-degree {
+      font-size: 0.88rem; color: var(--white-dim); margin: 0.25rem 0;
+    }
+
+    .resume-edu-detail {
+      font-size: 0.82rem; color: var(--sage); margin-top: 0.2rem;
+    }
+
+    /* Back link */
+    .resume-back {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--white-faint); letter-spacing: 0.08em;
+      padding: 0.5rem 0; margin-bottom: 2rem;
+      transition: color var(--ease);
+    }
+    .resume-back:hover { color: var(--lime); }
+
+    @media (max-width: 600px) {
+      .resume-skill-row { grid-template-columns: 1fr; gap: 0.25rem; }
+      .resume-skill-category { color: var(--lime); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAV ─────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo" style="text-decoration:none">JBR</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="../index.html#project">Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="index.html" style="color:var(--lime)">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ─── RESUME HERO ──────────────────────────── -->
+  <div class="resume-hero">
+    <div class="resume-hero-inner">
+      <div>
+        <p class="resume-hero-label">Resume</p>
+        <h1 class="resume-hero-name">Jorge Barron Rivero</h1>
+        <p class="resume-hero-title">Data Analytics Engineer</p>
+        <div class="resume-hero-contact">
+          <a href="mailto:jorgebarron0510@gmail.com">jorgebarron0510@gmail.com</a>
+          <span>+1 (857) 210-7346</span>
+          <a href="https://linkedin.com/in/jorgebarronrivero" target="_blank">linkedin.com/in/jorgebarronrivero</a>
+          <a href="https://github.com/jorgebarron05" target="_blank">github.com/jorgebarron05</a>
+        </div>
+      </div>
+      <div class="resume-actions">
+        <a href="jorge-barron-rivero.pdf" download class="btn btn-primary">Download PDF ↓</a>
+        <a href="../index.html" class="btn btn-outline">← Back to Portfolio</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── RESUME BODY ──────────────────────────── -->
+  <main class="resume-body">
+
+    <!-- Education -->
+    <section class="resume-section">
+      <div class="resume-section-header">
+        <span class="resume-section-label">Education</span>
+        <div class="resume-section-line"></div>
+      </div>
+
+      <div class="resume-edu-entry">
+        <div class="resume-edu-header">
+          <span class="resume-edu-school">Northeastern University</span>
+          <span class="resume-edu-date">Sep 2020 – May 2024</span>
+        </div>
+        <p class="resume-edu-degree">B.S. Computer Science &amp; Economics &nbsp;·&nbsp; GPA 3.55</p>
+        <p class="resume-edu-detail">Khoury College of Computer Sciences &nbsp;·&nbsp; Boston, MA</p>
+        <p class="resume-edu-detail" style="margin-top:0.4rem; color: var(--white-faint); font-size:0.8rem;">
+          Coursework: AI for Business Strategy (MIT Sloan), Cybersecurity, Data Science, Database Design, Object-Oriented Design
+        </p>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="resume-section">
+      <div class="resume-section-header">
+        <span class="resume-section-label">Technical Skills</span>
+        <div class="resume-section-line"></div>
+      </div>
+
+      <div class="resume-skills-list">
+        <div class="resume-skill-row">
+          <span class="resume-skill-category">Programming</span>
+          <span class="resume-skill-items">Python, SQL, R, Java, HTML/CSS, LaTeX, Lisp, MongoDB, Spark</span>
+        </div>
+        <div class="resume-skill-row">
+          <span class="resume-skill-category">Data &amp; Cloud</span>
+          <span class="resume-skill-items">Snowflake, dbt, Dagster, Fivetran, Airflow, Docker, NumPy, Pandas, Ubuntu</span>
+        </div>
+        <div class="resume-skill-row">
+          <span class="resume-skill-category">Project Mgmt</span>
+          <span class="resume-skill-items">Git, GitHub, Jira, Linear, Confluence, Bitbucket, Sigma, VisualCron, Google/Microsoft Suite</span>
+        </div>
+        <div class="resume-skill-row">
+          <span class="resume-skill-category">Languages</span>
+          <span class="resume-skill-items">English (native) · Spanish (native) · Portuguese (fluent)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section class="resume-section">
+      <div class="resume-section-header">
+        <span class="resume-section-label">Work Experience</span>
+        <div class="resume-section-line"></div>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="resume-entry-role">Data Analytics Engineer</span>
+          <span class="resume-entry-date">Jul 2025 – Present</span>
+        </div>
+        <p class="resume-entry-company">Freestone Grove Partners &nbsp;·&nbsp; New York City, NY</p>
+        <ul class="resume-entry-bullets">
+          <li>Evaluate alternative data vendors for long/short, factor-neutral quantitative strategies by building ETL pipelines to ingest trial datasets, conducting backtests against historical portfolio performance, and analyzing predictive signals through correlation analysis and temporal consistency checks.</li>
+          <li>Coordinate trial onboarding, presenting analytical findings to data scientists and investment teams, and supporting vendor selection decisions based on signal performance and cost.</li>
+          <li>Engineer and prioritize data ingestion workflows integrating vendor feeds into the firm's data lake, accelerating alternative data onboarding while maintaining scalable, production-grade engineering standards.</li>
+        </ul>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="resume-entry-role">Data Analytics Engineer</span>
+          <span class="resume-entry-date">May 2024 – May 2025</span>
+        </div>
+        <p class="resume-entry-company">Avenue One &nbsp;·&nbsp; New York City, NY</p>
+        <ul class="resume-entry-bullets">
+          <li>Architected data infrastructure with S3 Data Lake, MSSQL, and Snowflake, implementing dbt transformations for real estate data from MLS systems and Zillow.</li>
+          <li>Orchestrated ETL processes using Fivetran, Airflow, and Etlworks to sync operational data from Amazon RDS into a centralized Snowflake warehouse.</li>
+          <li>Developed analytics solutions in Sigma for portfolio optimization and market analysis, integrating CI/CD with Git workflows.</li>
+        </ul>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="resume-entry-role">Research &amp; Data Analyst Co-op</span>
+          <span class="resume-entry-date">Jun 2023 – Dec 2023</span>
+        </div>
+        <p class="resume-entry-company">Perkins School for the Blind &nbsp;·&nbsp; Boston, MA</p>
+        <ul class="resume-entry-bullets">
+          <li>Built interactive data visualizations in Python mapping global DisabilityTech market trends, product segmentation, and company growth trajectories to inform McKinsey research collaboration.</li>
+          <li>Engineered Python-based data integration to automate data collection, scaling the DisabilityTech company database by 2×.</li>
+        </ul>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="resume-entry-role">Project Management &amp; Application Support Co-op</span>
+          <span class="resume-entry-date">Jul 2022 – Dec 2022</span>
+        </div>
+        <p class="resume-entry-company">Annaly Capital Management &nbsp;·&nbsp; New York City, NY</p>
+        <ul class="resume-entry-bullets">
+          <li>Resolved 400+ data integrity issues by debugging VisualCron jobs and optimizing SQL queries, ensuring seamless daily tape ingestions for mortgage-backed securities portfolio operations.</li>
+          <li>Tracked and analyzed bug trends in JIRA, presenting operational KPIs to the CTO and development teams in weekly stand-ups.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="resume-section">
+      <div class="resume-section-header">
+        <span class="resume-section-label">Projects</span>
+        <div class="resume-section-line"></div>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="resume-entry-role">Defining DisabilityTech: The Rise of Inclusive Innovation</span>
+          <span class="resume-entry-date">Jun – Sep 2023</span>
+        </div>
+        <p class="resume-entry-company">Perkins School for the Blind (McKinsey Collaboration)</p>
+        <ul class="resume-entry-bullets">
+          <li>Co-authored McKinsey white paper analyzing the $25B DisabilityTech market projected to reach $37B by 2029, mapping 1,500+ companies across hardware, software, and services categories.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Leadership -->
+    <section class="resume-section">
+      <div class="resume-section-header">
+        <span class="resume-section-label">Leadership</span>
+        <div class="resume-section-line"></div>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="resume-entry-role">LATAM Business Club — Co-Founder</span>
+          <span class="resume-entry-date">Aug 2023 – May 2024</span>
+        </div>
+        <p class="resume-entry-company">Northeastern University &nbsp;·&nbsp; Boston, MA</p>
+        <ul class="resume-entry-bullets">
+          <li>Co-founded and expanded club to 350+ members, hosting fireside chats with the LATAM Airlines CEO and angel investors to create partnership opportunities for LATAM-connected students.</li>
+        </ul>
+      </div>
+
+      <div class="resume-entry">
+        <div class="resume-entry-header">
+          <span class="resume-entry-role">Teaching Assistant — CS Professional Development</span>
+          <span class="resume-entry-date">Jan – Apr 2024</span>
+        </div>
+        <p class="resume-entry-company">Khoury College of CS, Northeastern University &nbsp;·&nbsp; Boston, MA</p>
+        <ul class="resume-entry-bullets">
+          <li>Mentored 100+ CS and Data Science students through the co-op process via mock interviews, resume reviews, and technical career workshops.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+</body>
+</html>
