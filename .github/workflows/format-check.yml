@@ -1,0 +1,24 @@
+name: Format Check
+
+on:
+  pull_request:
+    paths:
+      - "**.html"
+      - "**.css"
+      - "**.js"
+
+jobs:
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install -g prettier
+
+      - name: Check formatting
+        run: prettier --check "**/*.{html,css,js}" --ignore-path .prettierignore
