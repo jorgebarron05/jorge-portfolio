@@ -126,6 +126,29 @@ function drawWinOverlay() {
   ctx.fillText('Press R to generate a new maze', canvas.width / 2, canvas.height / 2 + CELL_PX);
 }
 
+/* ─── Touch / Swipe ─────────────────────────── */
+let touchStartX = null;
+let touchStartY = null;
+
+canvas.addEventListener('touchstart', e => {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+canvas.addEventListener('touchend', e => {
+  if (touchStartX === null) return;
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  touchStartX = null;
+  touchStartY = null;
+  if (Math.abs(dx) < 10 && Math.abs(dy) < 10) return; // tap, ignore
+  if (Math.abs(dx) > Math.abs(dy)) {
+    movePlayer(dx > 0 ? 'ArrowRight' : 'ArrowLeft');
+  } else {
+    movePlayer(dy > 0 ? 'ArrowDown' : 'ArrowUp');
+  }
+}, { passive: true });
+
 /* ─── Input ─────────────────────────────────── */
 document.addEventListener('keydown', e => {
   switch (e.key) {

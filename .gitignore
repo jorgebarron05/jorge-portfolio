@@ -1,0 +1,9 @@
+.DS_Store
+
+# LaTeX build artifacts
+resume/latex/*.aux
+resume/latex/*.log
+resume/latex/*.fls
+resume/latex/*.fdb_latexmk
+resume/latex/*.synctex.gz
+resume/latex/*.out
