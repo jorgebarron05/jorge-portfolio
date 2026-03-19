@@ -1,0 +1,141 @@
+\documentclass[a4paper,10.5pt]{article}
+\usepackage{latexsym}
+\usepackage{marvosym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{mathptmx} % Use Times font (serif)
+\renewcommand{\familydefault}{\rmdefault} % Set default font family to serif (Times)
+\renewcommand{\baselinestretch}{1.1} % Adjust line spacing for consistency
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins for reduced top and side space
+\addtolength{\oddsidemargin}{-0.5in}  % Reduce left margin
+\addtolength{\evensidemargin}{-0.5in} % Reduce right margin
+\addtolength{\textwidth}{1.0in}       % Increase text width to fill more space
+\addtolength{\topmargin}{-0.75in}     % Reduce top margin
+\addtolength{\textheight}{1.0in}      % Increase text height to fill more vertical space
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\raggedright\large\bfseries
+}{}{0em}{}[\titlerule\vspace{-2pt}]
+
+% No indent paragraphs
+\setlength\parindent{0pt}
+
+% Define variables for redaction
+\newcommand{\REDACTED}{false}
+\renewcommand{\familydefault}{\rmdefault} % Re-declare to ensure consistency with Times font
+\renewcommand{\baselinestretch}{1.0} % Re-declare to ensure consistency with line spacing
+
+\titlespacing\section{0pt}{*2}{*2}
+
+%-------------------------
+% Custom commands
+\newcommand{\NAME}{\textbf{Jorge Barron Rivero}}
+\newcommand{\EMAIL}{jorgebarron0510@gmail.com}
+\newcommand{\PHONE}{+1 (857)-210-7346}
+\newcommand{\LINKEDIN}{jorgebarronrivero}
+%-------------------------
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \NAME} \\
+    \vspace{5pt}
+    \small \textbf{\PHONE} ~\textbullet~ \href{mailto:\EMAIL}{\EMAIL} ~\textbullet~ \href{https://linkedin.com/in/\LINKEDIN}{\LINKEDIN}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+\textbf{Northeastern University} \hfill \textbf{Sep. 2020 -- May 2024} \\
+\textit{Khoury College of Computer Sciences} \hfill Boston, MA \\
+Bachelor of Science in Computer Science and Economics \hfill \textbf{GPA: 3.55} \\
+\textbf{Coursework: }AI for Business Strategy (MIT Sloan), Cybersecurity, Data Science, Database Design, Object-Oriented Design
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\textbf{Programming:} HTML/CSS, Java, LaTeX, Lisp, MongoDB, Python, R, Racket, SQL, Swing, Spark \\
+\textbf{Project Management:} Bitbucket, Confluence, Git, Google/Microsoft Suite, Jira, Linear, Monday, Sigma, VisualCron \\
+\textbf{Frameworks/Technologies:} Dagster, Astronomer, dbt, Docker, Fivetran, GitHub, NumPy/Pandas, Snowflake, Ubuntu
+
+
+%-----------WORK EXPERIENCE-----------
+\section{Work Experience}
+
+\textbf{Data Analytics Engineer} \hfill \textbf{July 2025 -- Present} \\
+\textit{Freestone Grove Partners} \hfill New York City, NY \vspace{-2mm}
+\begin{itemize}[noitemsep, label={$\bullet$}]
+    \item Evaluate alternative data vendors for long/short, factor neutral quantitative strategies by building ETL pipelines to ingest trial datasets, conducting backtests against historical portfolio performance, and analyzing predictive signals through correlation analysis and temporal consistency checks
+    \item Coordinate trial onboarding, presenting analytical findings to data scientists and investment teams, and supporting vendor selection decisions based on signal performance and cost
+    \item Engineer and prioritize data ingestion workflows integrating vendor feeds into the firm's data lake, accelerating alternative data onboarding while maintaining scalable, production grade engineering standards
+\end{itemize}
+
+\textbf{Data Analytics Engineer} \hfill \textbf{May 2024 -- May 2025} \\
+\textit{Avenue One} \hfill New York City, NY \vspace{-2mm}
+\begin{itemize}[noitemsep, label={$\bullet$}]
+    \item Architected data infrastructure with S3 Data Lake, MSSQL, and Snowflake warehouse, implementing dbt transformations for real estate data from MLS systems and Zillow
+    \item Orchestrated ETL processes using Fivetran, AirFlow, and Etlworks to sync operational data from Amazon RDS databases into centralized Snowflake warehouse
+    \item Developed analytics solutions in Sigma for portfolio optimization and market analysis, integrating CI/CD with Git workflows
+\end{itemize}
+
+\textbf{Research and Data Analyst Co-op} \hfill \textbf{June 2023 -- Dec. 2023} \\
+\textit{Perkins School for the Blind} \hfill Boston, MA \vspace{-2mm}
+\begin{itemize}[noitemsep, label={$\bullet$}]
+    \item Built interactive data visualizations in Python mapping global DisabilityTech market trends, product segmentation, and company growth trajectories to inform McKinsey research collaboration
+    \item Engineered Python-based data integration to automate data collection, scaling the DisabilityTech company database by 2x
+\end{itemize}
+
+\textbf{Project Management and Application Support Co-op} \hfill \textbf{July 2022 -- Dec. 2022} \\
+\textit{Annaly Capital Management Inc.} \hfill New York City, NY \vspace{-2mm}
+\begin{itemize}[noitemsep, label={$\bullet$}]
+    \item Resolved 400+ data integrity issues by debugging VisualCron jobs and optimizing SQL queries, ensuring seamless daily tape ingestions for mortgage-backed securities portfolio operations
+    \item Tracked and analyzed bug trends in JIRA, presenting operational KPIs to CTO and development teams in weekly stand-ups
+\end{itemize}
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+
+\textbf{Defining DisabilityTech: The Rise of Inclusive Innovation} \hfill \textbf{June 2023 - Sep. 2023} \\
+\textit{Perkins, School for the Blind} \vspace{-2mm}
+\begin{itemize}[noitemsep, label={$\bullet$}]
+    \item Co-authored McKinsey White Paper by providing expanded DisabilityTech database, analyzing the \$25B market projected to reach \$37B by 2029 and mapping 1,500+ companies in the sector
+\end{itemize}
+
+
+
+%-----------LEADERSHIP EXPERIENCE-----------
+\section{Leadership Experience}
+
+\textbf{LATAM Business Club - Consulting} \hfill \textbf{Aug. 2023 -- May 2024} \\
+\textit{Northeastern University} \hfill Boston, MA \vspace{-2mm}
+\begin{itemize}[noitemsep, label={$\bullet$}]
+    \item Co-founded and expanded club to 350+ members, hosting fireside chats with LATAM Airlines CEO and angel investors to create opportunities for partnership
+\end{itemize}
+
+\textbf{Computer Science Professional Development for Co-op, Teaching Assistant} \hfill \textbf{Jan. 2024 -- April 2024} \\
+\textit{Khoury College of Computer Sciences, Northeastern University} \hfill Boston, MA \vspace{-2mm}
+\begin{itemize}[noitemsep, label={$\bullet$}]
+    \item Mentored 100+ CS/Data Science students through the Co-op process by leading mock interviews, resume reviews, technical assessments, and workshops to enhance job readiness 
+\end{itemize}
+
+
+%-----------SKILLS-----------
+\section{Skills}
+\textbf{Languages:}  English (native), Portuguese (fluent), Spanish (native) \\
+\textbf{Multicultural Experience:} Lived in: Angola, Argentina, Bolivia, Brazil, Cuba, England, Scotland, Spain, U.S.
+
+
+
+
+\end{document}
